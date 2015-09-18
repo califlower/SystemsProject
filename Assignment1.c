@@ -14,7 +14,7 @@ struct Token
 typedef struct Token Token;
 
 /*Creates the token structure */
-/* A glorified substring finder*/
+/*A glorified substring finder*/
 
 Token *Create(char * input, char * type, int y, int z) 
 {
@@ -34,7 +34,7 @@ Token *Create(char * input, char * type, int y, int z)
 	
 	/* stores stuff in the structure */
 	Token *newToken=(struct Token*)malloc(sizeof(Token));
-       	newToken->data=NewToken;
+    newToken->data=NewToken;
 	newToken->tokenType=type;
 	return newToken;
 
@@ -53,7 +53,7 @@ char *GetNextToken( Token * tk )
   return NULL;
 }
 
-/*  USed to populate the linked list, now it checks the string
+/* Used to populate the linked list, now it checks the string
 array and prints out tokens based on the input */
 void populateTokenList(char* input)
 {
@@ -105,24 +105,24 @@ void populateTokenList(char* input)
 				
 				while (isdigit(input[y]) && input[y]-'0'<=7)
 				{
-						if (input[y] == '0' && (input[y+1] == 'X' || input[y+1] == 'x'))
-						{
-						break;
-						}
-						/*keeps count of how many indexes have been iterated through*/
-						y++; 
+					if (input[y] == '0' && (input[y+1] == 'X' || input[y+1] == 'x'))
+					{
+                        break;
+					}
+					/*keeps count of how many indexes have been iterated through*/
+					y++; 
 						
-						if (input[y] == '.')
-						{
+					if (input[y] == '.')
+					{
 						r++;
-						}
+					}
 	
 						/* if the end of string is hit, add 1 to y in order to account for the null character index */
-						else if (input[y] == '\0')
-						{ 
-							y++;
-							break;
-						}
+					else if (input[y] == '\0')
+					{ 
+						y++;
+						break;
+					}
 						
 							
 				}
@@ -184,7 +184,7 @@ void populateTokenList(char* input)
 					if (input[y] == '\0')
 					{ 
 						y++;
-							break;
+						break;
 					}
 						
 					if (input[y] == '0'&& (input[y+1] == 'X' || input[y+1] == 'x'))
@@ -578,6 +578,14 @@ void populateTokenList(char* input)
 				DestroyToken(specialtoken);
 				z=y;
 				break;
+            case '$' :
+				y=z+1;
+				Token *specialtokenmoney = Create(input,"Currency",y,z);
+				printf("%s ", specialtokenmoney->tokenType);
+				printf("%s\n", specialtokenmoney->data);
+				DestroyToken(specialtokenmoney);
+				z=y;
+				break;
 			case '>' :
 				y=z+1;
 				Token *specialtokengreaterthan = Create(input,"Greater Than",y,z);
@@ -696,6 +704,14 @@ void populateTokenList(char* input)
 				printf("%s ", specialtokenrightbracket->tokenType);
 				printf("%s\n", specialtokenrightbracket->data);
 				DestroyToken(specialtokenrightbracket);
+				z=y;
+				break;
+            case '@' :
+				y=z+1;
+				Token *specialtokenat = Create(input,"At",y,z);
+				printf("%s ", specialtokenat->tokenType);
+				printf("%s\n", specialtokenat->data);
+				DestroyToken(specialtokenat);
 				z=y;
 				break;
 			case '_' :

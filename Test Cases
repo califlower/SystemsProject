@@ -102,14 +102,106 @@ Expected Output:
 
 Output:
 *Blank Output*
+------------------------
+Inputs:
+"0327"
+
+Expected Output: 
+Octal 0327
+
+Output:
+Octal 0327
+
+------------------------
+Inputs:
+"0327"
+
+Expected Output: 
+Octal 0327
+
+Output:
+Octal 0327
+
+
+------------------------
+Inputs:
+"0327test0327"
+
+Expected Output: 
+Octal 0327
+word test
+Octal 0327
+
+Output:
+Octal 0327
+word test
+Octal 0327
+
+
+------------------------
+Inputs:
+"03270x32F"
+
+Expected Output: 
+Octal 0327
+Hexadecimal 0x32F
+
+Output:
+Octal 0327
+Hexadecimal 0x32F
+
+
+------------------------
+Inputs:
+"1.5eeee5"
+
+Expected Output: 
+Floating Point 1.5
+Word eeee
+Decimal 5
+
+Output:
+Floating Point 1.5
+Word eeee
+Decimal 5
 
 
 
+------------------------
+Inputs:
+"+-#!@#$%^&*()-="
+
+Expected Output: 
+Additon +
+Subtraction -
+Hash #
+Not / Exclamation !
+At @
+Hash #
+Currency $
+Modulus %
+Exclusive Or / Carret ^
+Bitwise and / Ampersand &
+Multiplication *
+Left Parenthesis (
+Right Parenthesis )
+Minus Equals -=
 
 
-
-
-
-
+Output:
+Additon +
+Subtraction -
+Hash #
+Not / Exclamation !
+At @
+Hash #
+Currency $
+Modulus %
+Exclusive Or / Carret ^
+Bitwise and / Ampersand &
+Multiplication *
+Left Parenthesis (
+Right Parenthesis )
+Minus Equals -=
 
 
