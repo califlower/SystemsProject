@@ -74,30 +74,36 @@ Inputs
 " array[xyz ] += pi 3.14159e-10 "
 
 Expected Output
+
 word array
-left brace [
+Left brace [
 word xyz
-right brace ]
-plusequals +=
+Right brace ]
+Plus Equals +=
 word pi
-float 3.14159e-10
+Floating Point 3.14159e-10
 
 Output
+
 word array
-left brace [
+Left brace [
 word xyz
-right brace ]
-plusequals +=
+Right brace ]
+Plus Equals +=
 word pi
-float 3.14159e-10
+Floating Point 3.14159e-10
+
 -----------------------
 Inputs:
 "    "
 
-Expected Output: (???)
+Expected Output: 
+*Blank Output*
 
 Output:
-""
+*Blank Output*
+
+
 
 
 

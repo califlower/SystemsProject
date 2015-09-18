@@ -119,6 +119,8 @@ void populateTokenList(char* input)
 							y++;
 							break;
 						}
+						
+							
 				}
 				
 				if (r == 0)
@@ -128,6 +130,7 @@ void populateTokenList(char* input)
 					printf("%s\n", octaltoken->data);
 					DestroyToken(octaltoken);
 					z=y;
+					continue;
 				}
 				
 				/* A floating point decimal check */
