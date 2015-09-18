@@ -105,6 +105,10 @@ void populateTokenList(char* input)
 				
 				while (isdigit(input[y]) && input[y]-'0'<=7)
 				{
+						if (input[y] == '0' && (input[y+1] == 'X' || input[y+1] == 'x'))
+						{
+						break;
+						}
 						/*keeps count of how many indexes have been iterated through*/
 						y++; 
 						
