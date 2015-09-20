@@ -215,3 +215,14 @@ Floating Point .35
 
 Output:
 Floating Point .35
+
+------------------------
+Inputs:
+"\t"
+
+Expected Output: 
+Escape Character [0x09]
+
+
+Output:
+Escape Character [0x09]
