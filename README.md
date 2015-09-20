@@ -19,3 +19,5 @@ Emojis, and characters that do not appear on a normal keyboard are not supported
 Check the test cases for expected outputs. Most keyboard characters are supported. If our program prints "Malformed Token", you most likely entered a number with a bad format. This will trigger occasionally but not on all badly inputed numbers. 
 
 Some printed tokens may seem to be slightly unexpected. Most cases are in fact expected, and are shown in the test cases as expected outputs.
+
+Escape character WILL BE PRINTED AS INDIVIDUAL CHARACTERS. Example, \a will be Backslash \, Word a
