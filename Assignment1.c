@@ -305,7 +305,7 @@ void populateTokenList(char* input)
 			}	
 		}
 		/* Another floating point check */
-		else if (isdigit(input[z]) && (input[z+1]=='.' || (input[z+1]=='E' && input[z+2]!='E') || (input[z+1]=='e' && input[z+2]!='e')) || (input[z]=='.' && isdigit(input[z+1])))
+		else if (isdigit(input[z]) && ( (input[z+1]=='.' || (input[z+1]=='E' && input[z+2]!='E') || (input[z+1]=='e' && input[z+2]!='e')) || (input[z]=='.' && isdigit(input[z+1]))))
 		{
 			y=z+2;
 			
