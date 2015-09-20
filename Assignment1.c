@@ -770,13 +770,12 @@ void populateTokenList(char* input)
 				break;
 			case '\\' :
 				y=z+1;
-				
-					Token *specialtokenbackslash = Create(input,"Escape Character",y,z);
-					printf("%s ", specialtokenbackslash->tokenType);
-					printf("[0x5C]\n", specialtokenbackslash->data);
-					DestroyToken(specialtokenbackslash);
-					z=y;
-					break;	
+				Token *specialtokenbackslash = Create(input,"Escape Character",y,z);
+				printf("%s ", specialtokenbackslash->tokenType);
+				printf("%s[0x5C]\n", specialtokenbackslash->data);
+				DestroyToken(specialtokenbackslash);
+				z=y;
+				break;	
 			case '[' :
 				y=z+1;
 				Token *specialtokenleftbrace = Create(input,"Left Brace",y,z);
