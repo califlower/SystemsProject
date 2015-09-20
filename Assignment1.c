@@ -362,6 +362,75 @@ void populateTokenList(char* input)
 			continue;
 		}
 		
+		else if (input[z]== '\\' && input[z+1] == 'a'){	
+			y = z+2;
+			Token *specialtoken = Create(input, "Escape Character", y, z);
+			printf("%s ", specialtoken->tokenType);
+			printf("[0x07]\n");
+			DestroyToken(specialtoken);
+			z=y;
+			continue;
+		}
+		
+		else if (input[z]== '\\' && input[z+1] == 'b'){	
+			y = z+2;
+			Token *specialtoken = Create(input, "Escape Character", y, z);
+			printf("%s ", specialtoken->tokenType);
+			printf("[0x08]\n");
+			DestroyToken(specialtoken);
+			z=y;
+			continue;
+		}
+		
+		else if (input[z]== '\\' && input[z+1] == 'f'){	
+			y = z+2;
+			Token *specialtoken = Create(input, "Escape Character", y, z);
+			printf("%s ", specialtoken->tokenType);
+			printf("[0x0C]\n");
+			DestroyToken(specialtoken);
+			z=y;
+			continue;
+		}
+		
+		else if (input[z]== '\\' && input[z+1] == 'n'){	
+			y = z+2;
+			Token *specialtoken = Create(input, "Escape Character", y, z);
+			printf("%s ", specialtoken->tokenType);
+			printf("[0x0A]\n");
+			DestroyToken(specialtoken);
+			z=y;
+			continue;
+		}
+		
+		else if (input[z]== '\\' && input[z+1] == 'r'){	
+			y = z+2;
+			Token *specialtoken = Create(input, "Escape Character", y, z);
+			printf("%s ", specialtoken->tokenType);
+			printf("[0x0D]\n");
+			DestroyToken(specialtoken);
+			z=y;
+			continue;
+		}
+				
+		else if (input[z]== '\\' && input[z+1] == 't'){	
+			y = z+2;
+			Token *specialtoken = Create(input, "Escape Character", y, z);
+			printf("%s ", specialtoken->tokenType);
+			printf("[0x09]\n");
+			DestroyToken(specialtoken);
+			z=y;
+			continue;
+		}
+				
+		else if (input[z]== '\\' && input[z+1] == 'v'){	
+			y = z+2;
+			Token *specialtoken = Create(input, "Escape Character", y, z);
+			printf("%s ", specialtoken->tokenType);
+			printf("[0x0B]\n");
+			DestroyToken(specialtoken);
+			z=y;
+			continue;
+		}
 		
 		else if (input[z]=='+' && input[z+1]=='=')
 		{
@@ -532,8 +601,8 @@ void populateTokenList(char* input)
 			DestroyToken(specialtoken);
 			z=y;
 			continue;
-		}
-		
+		}		
+
 		
 		/*Contains single character operators*/	
 		switch (input[z])
@@ -668,12 +737,13 @@ void populateTokenList(char* input)
 				break;
 			case '\\' :
 				y=z+1;
-				Token *specialtokenbackslash = Create(input,"Backslash",y,z);
-				printf("%s ", specialtokenbackslash->tokenType);
-				printf("%s\n", specialtokenbackslash->data);
-				DestroyToken(specialtokenbackslash);
-				z=y;
-				break;
+				
+					Token *specialtokenbackslash = Create(input,"Escape Character",y,z);
+					printf("%s ", specialtokenbackslash->tokenType);
+					printf("[0x5C]\n", specialtokenbackslash->data);
+					DestroyToken(specialtokenbackslash);
+					z=y;
+					break;	
 			case '[' :
 				y=z+1;
 				Token *specialtokenleftbrace = Create(input,"Left Brace",y,z);
