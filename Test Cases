@@ -205,3 +205,13 @@ Right Parenthesis )
 Minus Equals -=
 
 
+------------------------
+Inputs:
+".35"
+
+Expected Output: 
+Floating Point .35
+
+
+Output:
+Floating Point .35
