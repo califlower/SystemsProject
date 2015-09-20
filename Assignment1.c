@@ -234,16 +234,16 @@ void populateTokenList(char* input)
 			continue;
 			
 		}
-		/*Does regular digits*/
-		else if (isdigit(input[z]) && input[z+1]!='.')
+
+
+	/*Does regular digits*/
+	else if (isdigit(input[z]) && input[z+1]!='.')
 		{
 			y = z+1;
 			int h = 0;
-			
-			/* in this statement we need to have something for floating point? */
-			while (isdigit(input[y])) 
+			while (isdigit(input[y])) // in this statement we need to have something for floating point
 			{
-				/*breaks if it detects a hexadecimal */
+				
 				if (input[y]=='0' && (input[y+1]=='x' || input[y+1] == 'X'))
 				{
 					break;
@@ -257,9 +257,8 @@ void populateTokenList(char* input)
 					h++;
 				}
 				
-				/* Null character check */
 				else if (input[y] == '\0')
-				{ 
+				{ // if it hits the end of the string, this adds on the null character index.
 					y++;
 					break;
 				}
@@ -268,15 +267,13 @@ void populateTokenList(char* input)
 			
 			if (h == 0)
 			{
-				Token *decimaltoken = Create(input,"Decimal",y,z);
-				printf("%s ", decimaltoken->tokenType);
-				printf("%s\n", decimaltoken->data);
-				DestroyToken(decimaltoken);
+				Token *word = Create(input,"Decimal",y,z);
+				printf("%s ", word->tokenType);
+				printf("%s\n", word->data);
+				DestroyToken(word);
 				z=y;
+				continue;
 			}
-			
-			/* Another floating point check for floating points that
-			come after a long string of decimal digits */
 			
 			else if (h!=0)
 			{			
