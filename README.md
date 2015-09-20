@@ -4,7 +4,7 @@ This is a tokenizer written in C that can discern between words, hexadecimal, oc
 
 Steps to get it to run
 
-1) Compile the source file and give the executable a name
+1) Compile the source file using your favorite compiler and give the executable a name
 
 2) Run the program from the command line with a command such as ./tokenizer "0x4356abdc 0777 [] "
 
