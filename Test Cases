@@ -1,7 +1,7 @@
 Test Cases
 Assume All Inputs are Enclosed in Commas
 -------------------
-Inputs
+Inputs - Null Case
 ""
 
 Expected Output
@@ -11,7 +11,7 @@ Output
 No Argument
 
 -------------------
-Inputs
+Inputs - Null Case
 
 
 Expected Output
@@ -21,7 +21,7 @@ Output
 No Argument
 
 -------------------
-Inputs
+Inputs - Word Case
 test
 
 Expected Output
@@ -31,8 +31,8 @@ Output
 word test
 
 -------------------
-Inputs
-0x33F
+Inputs - Hex Case
+0x33F 
 
 Expected Output
 Hexadecimal 0x33F
@@ -41,8 +41,8 @@ Output
 Hexadecimal 0x33F
 
 -------------------
-Inputs
-15.32
+Inputs - Floating Point Case
+15.32 
 
 Expected Output
 Floating Point 15.32
@@ -51,7 +51,7 @@ Output
 Floating Point 15.32
 
 -------------------
-Inputs
+Inputs - Special Floating Point Cases
 1.575e1
 
 Expected Output
@@ -62,16 +62,7 @@ Floating Point 1.575e1
 
 --------------------
 Inputs
-1.575e-1
-
-Expected Output
-Floating Point 1.575e-1
-
-Output
-Floating Point 1.575e-1
----------------------
-Inputs
-" array[xyz ] += pi 3.14159e-10 "
+" array[xyz ] += pi 3.14159e-10 " - Case From Assignment
 
 Expected Output
 
@@ -102,9 +93,11 @@ Expected Output:
 
 Output:
 *Blank Output*
-------------------------
+
+-----------------------
+
 Inputs:
-"0327"
+"0327" - Octal Case
 
 Expected Output: 
 Octal 0327
@@ -114,18 +107,7 @@ Octal 0327
 
 ------------------------
 Inputs:
-"0327"
-
-Expected Output: 
-Octal 0327
-
-Output:
-Octal 0327
-
-
-------------------------
-Inputs:
-"0327test0327"
+"0327test0327" - Octal/word Case
 
 Expected Output: 
 Octal 0327
@@ -137,9 +119,8 @@ Octal 0327
 word test
 Octal 0327
 
-
 ------------------------
-Inputs:
+Inputs: - Octal/Hex Cases
 "03270x32F"
 
 Expected Output: 
@@ -150,10 +131,9 @@ Output:
 Octal 0327
 Hexadecimal 0x32F
 
-
 ------------------------
 Inputs:
-"1.5eeee5"
+"1.5eeee5" - Special floating point cases
 
 Expected Output: 
 Floating Point 1.5
@@ -165,11 +145,9 @@ Floating Point 1.5
 Word eeee
 Decimal 5
 
-
-
 ------------------------
 Inputs:
-"+-#!@#$%^&*()-="
+"+-#!@#$%^&*()-=" - Special Symbols
 
 Expected Output: 
 Additon +
@@ -187,7 +165,6 @@ Left Parenthesis (
 Right Parenthesis )
 Minus Equals -=
 
-
 Output:
 Additon +
 Subtraction -
@@ -204,10 +181,9 @@ Left Parenthesis (
 Right Parenthesis )
 Minus Equals -=
 
-
 ------------------------
 Inputs:
-".35"
+".35" - Also considered a floating point
 
 Expected Output: 
 Floating Point .35
@@ -218,7 +194,7 @@ Floating Point .35
 
 ------------------------
 Inputs:
-"\t"
+"\t" - Escape character
 
 Expected Output: 
 Escape Character [0x09]
@@ -226,3 +202,71 @@ Escape Character [0x09]
 
 Output:
 Escape Character [0x09]
+-----------------------
+Inputs:
+"afsafsaf24140X3523560019xas0Xsdsad4214214214.53253E2.4eesadsa." - Treat .4 as a floating point as well
+
+Expected Output:
+word afsafsaf
+Decimal 2414
+Hexadecimal 0X3523560019
+word xas
+Hexadecimal 0X
+word sdsad
+Floating Point 4214214214.53253E2
+Decimal Point .
+Decimal 4
+word eesadsa
+Decimal Point .
+
+Output:
+word afsafsaf
+Decimal 2414
+Hexadecimal 0X3523560019
+word xas
+Hexadecimal 0X
+word sdsad
+Floating Point 4214214214.53253E2
+Decimal Point .
+Decimal 4
+word eesadsa
+Decimal Point .
+-------------------------------
+Inputs:
+"afsafsf0X0x012321" - Treat 0x0 as a hex, and the lone 'x' as a word in this case.
+
+Expected Outputs:
+word afsafsf
+Hexadecimal 0X0 
+word x
+Octal 012321
+
+Output:
+word afsafsf
+Hexadecimal 0X0
+word x
+Octal 012321
+
+------------------------------
+Inputs:
+"afsafsf0X0x01232\t\n\r" - Special Escape Character Case
+
+Expected Outputs:
+word afsafsf
+Hexadecimal 0X0
+word x
+Octal 01232
+Escape Character [0x09]
+Escape Character [0x0A]
+Escape Character [0x0D]
+
+Outputs:
+word afsafsf
+Hexadecimal 0X0
+word x
+Octal 01232
+Escape Character [0x09]
+Escape Character [0x0A]
+Escape Character [0x0D]
+
+
