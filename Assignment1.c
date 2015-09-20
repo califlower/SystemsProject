@@ -645,6 +645,15 @@ void populateTokenList(char* input)
 				DestroyToken(specialtokenaddition);
 				z=y;
 				break;
+			
+			case '.' :
+				y=z+1;
+				Token *specialtokendecimalpoint = Create(input,"Decimal Point",y,z);
+				printf("%s ", specialtokendecimalpoint->tokenType);
+				printf("%s\n", specialtokendecimalpoint->data);
+				DestroyToken(specialtokendecimalpoint);
+				z=y;
+				break;
 			case '-' :
 				y=z+1;
 				Token *specialtokensubtraction = Create(input,"Subtraction",y,z);
