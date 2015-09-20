@@ -20,4 +20,4 @@ Check the test cases for expected outputs. Most keyboard characters are supporte
 
 Some printed tokens may seem to be slightly unexpected. Most cases are in fact expected, and are shown in the test cases as expected outputs.
 
-Escape character WILL BE PRINTED AS INDIVIDUAL CHARACTERS. Example, \a will be Backslash \, Word a
+Escape characters WILL BE PRINTED AS INDIVIDUAL CHARACTERS. Example, \a will be Backslash \, Word a
