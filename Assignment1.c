@@ -778,7 +778,7 @@ void populateTokenList(char* input)
 				y=z+1;
 				Token *specialtokenbackslash = Create(input,"Escape Character",y,z);
 				printf("%s ", specialtokenbackslash->tokenType);
-				printf("%s[0x5C]\n", specialtokenbackslash->data);
+				printf("[0x5C]\n%s", specialtokenbackslash->data);
 				DestroyToken(specialtokenbackslash);
 				z=y;
 				break;	
