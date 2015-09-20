@@ -31,6 +31,16 @@ Output
 word test
 
 -------------------
+Inputs - Decimal Case
+"532523"
+
+Expected Output:
+Decimal 532523
+
+Output:
+Decimal 532523
+
+-------------------
 Inputs - Hex Case
 0x33F 
 
@@ -86,7 +96,7 @@ Floating Point 3.14159e-10
 
 -----------------------
 Inputs:
-"    "
+"    " - Empty Spaces Case
 
 Expected Output: 
 *Blank Output*
