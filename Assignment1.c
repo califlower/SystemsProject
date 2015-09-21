@@ -327,6 +327,14 @@ void populateTokenList(char* input)
 				{
 					break;
 				}
+				
+				else if (input[y] == '.'){
+						y = y+1;
+						while (isdigit(input[y])){
+							y++;	
+						}
+				}
+				
 			}
 				
 				Token *floatingpointtoken = Create(input,"Floating Point",y,z);
